@@ -220,4 +220,4 @@ This bot goes beyond basic functionality with:
 - Exa AI search and question answering
 - VIP user privileges and exclusive features
 
-All original functionality is preserved while adding these premium features.
+All original functionality is preserved while adding these premium features.# tanish-choudhary-bot
