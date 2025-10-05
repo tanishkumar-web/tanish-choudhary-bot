@@ -1,9 +1,9 @@
 <?php
 // config.php - Configuration file for PHP Telegram Bot
 
-// Bot Configuration
-define('BOT_TOKEN', 'YOUR_BOT_TOKEN_HERE'); // Replace with your actual bot token
-define('ADMIN_IDS', ['YOUR_TELEGRAM_ID']); // Replace with your Telegram user ID
+// Bot Configuration - Using environment variables with fallbacks
+define('BOT_TOKEN', getenv('TELEGRAM_BOT_TOKEN') ?: 'YOUR_BOT_TOKEN_HERE'); // Set via environment variable
+define('ADMIN_IDS', [getenv('ADMIN_TELEGRAM_ID') ?: 'YOUR_TELEGRAM_ID']); // Set via environment variable
 
 // Database
 define('USERS_FILE', 'users.json');
@@ -24,9 +24,18 @@ if (!file_exists(LOGS_DIR)) {
     mkdir(LOGS_DIR, 0755, true);
 }
 
-// Create logs file if it doesn't exist
+// Create logs directory and file if they don't exist
+if (!file_exists(dirname(LOG_FILE))) {
+    mkdir(dirname(LOG_FILE), 0755, true);
+}
+
 if (!file_exists(LOG_FILE)) {
     file_put_contents(LOG_FILE, '');
 }
 
+// Function to check if a user is admin
+function isAdmin($userId) {
+    $adminIds = ADMIN_IDS;
+    return in_array((string)$userId, $adminIds);
+}
 ?>
