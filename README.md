@@ -85,7 +85,7 @@ Before running the bot, you need to:
 3. Set environment variables in Render:
    ```
    TELEGRAM_BOT_TOKEN=your_actual_bot_token_here
-   RENDER_EXTERNAL_URL=https://your-service-name.onrender.com
+   ADMIN_TELEGRAM_ID=your_telegram_user_id
    ```
 
 4. Set the webhook:
@@ -169,27 +169,19 @@ You can extend this bot by:
 
 ## Troubleshooting
 
-1. **Webhook not working**:
-   - Check that your bot token is correct
-   - Ensure the URL is accessible from the internet (use ngrok for localhost)
-   - Verify the webhook URL with:
-     ```
-     https://api.telegram.org/bot[YOUR_BOT_TOKEN]/getWebhookInfo
-     ```
+See [DEPLOYMENT_TROUBLESHOOTING.md](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/DEPLOYMENT_TROUBLESHOOTING.md) for detailed help with common deployment issues.
 
-2. **Permission errors**:
-   - Check file permissions in the Dockerfile
-   - Ensure the web server can write to logs and data directories
+### Common Fixes Applied
 
-3. **Bot not responding**:
-   - Check the logs in [logs/](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/logs/) directory
-   - Verify the bot token is correct
-   - Make sure the webhook is properly set
+1. **Docker Build Issues**: 
+   - Fixed `docker-php-ext-install` command in Dockerfile
+   - Removed `json` extension installation (it's built into PHP)
+   - Kept only `curl` extension installation
 
-4. **Docker issues**:
-   - Ensure Docker Desktop is running
-   - Check Docker logs with `docker-compose logs`
-   - Restart Docker Desktop if needed
+2. **Composer Issues**:
+   - Removed `ext-json` requirement from composer.json
+
+These fixes should resolve the deployment errors you were seeing.
 
 ## Support
 
@@ -197,3 +189,4 @@ For issues with this bot, please check:
 1. The logs in the [logs/](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/logs/) directory
 2. The error messages in [error.log](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/error.log)
 3. Ensure all configuration values are correctly set in [config.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/config.php)
+4. Check [DEPLOYMENT_TROUBLESHOOTING.md](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/DEPLOYMENT_TROUBLESHOOTING.md) for solutions to common problems
