@@ -4,8 +4,15 @@ FROM php:8.1-apache
 # Set working directory
 WORKDIR /var/www/html
 
-# Install required extensions (json is built-in, only install curl)
-RUN docker-php-ext-install curl
+# Install system dependencies required for PHP extensions
+RUN apt-get update && apt-get install -y \
+    libcurl4-openssl-dev \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    && docker-php-ext-install curl
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
