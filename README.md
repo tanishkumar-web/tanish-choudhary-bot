@@ -1,223 +1,199 @@
-# Ultra-Premium Sigma-Level Telegram Bot
+# PHP Telegram Bot
 
-An ultra-premium, feature-rich Python Telegram bot built with python-telegram-bot v20+ featuring advanced payment integration with OCR verification, interactive games, AI features, admin dashboard, and much more.
+A complete PHP-based Telegram bot implementation ready for deployment on Render.com or local testing.
 
-## 🚀 Sigma-Level Features
+## Features
 
-### 🎛️ Admin Dashboard
-- **Full Back Panel**: Complete admin interface for bot management
-- **User Management**: View all users, search, DM individual users
-- **Payment Management**: Approve/reject OCR-verified payments
-- **Broadcast System**: Send announcements/ads to all users
-- **Analytics Dashboard**: View engagement metrics and statistics
-- **Leaderboards**: See top users by games, payments, activity
-- **Scheduled Content**: Plan and schedule messages
+- ✅ Full webhook implementation
+- ✅ User data storage in JSON format
+- ✅ Interactive keyboards and callback queries
+- 🎮 Built-in games module (Rock Paper Scissors, Dice Roll, Coin Toss)
+- 👑 Admin dashboard with user management
+- 📊 Statistics tracking
+- 📡 Broadcasting capabilities
+- 🛠 Health monitoring endpoint
+- 📝 Comprehensive logging
 
-### 👑 VIP User Features
-- **Exclusive Access**: Special privileges for VIP users
-- **Unlimited Exa AI Searches**: No limits on AI-powered searches
-- **Premium Content**: Access to exclusive quotes and information
-- **Priority Support**: Faster response times
-- **Special Rewards**: Daily bonuses and gifts
-- **Early Access**: First to try new features
+## Files
 
-### 🔐 Advanced Payment System with OCR
-- **Semi-Automatic Verification**: Users upload payment screenshots → bot auto-verifies via OCR → admin approves if ambiguous
-- **Universal UPI Integration**: Single UPI ID works for Paytm, GPay, PhonePe
-- **Multi-platform QR codes**: Generate QR for any payment platform
-- **Smart Payment Detection**: Bot understands payment keywords and responds intelligently
-- **One-tap UPI ID copying**
-- **Admin Approval Workflow**: Suspicious payments forwarded to admin with approve/reject buttons
+- **[index.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/index.php)** - Main entry point and command handling
+- **[config.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/config.php)** - Configuration settings
+- **[bot_functions.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/bot_functions.php)** - Core bot functionality
+- **[games.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/games.php)** - Games module
+- **[admin.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/admin.php)** - Admin functions
+- **[Dockerfile](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/Dockerfile)** - Docker configuration
+- **[composer.json](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/composer.json)** - PHP dependencies
+- **[docker-compose.yml](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/docker-compose.yml)** - Docker Compose configuration
+- **[.htaccess](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/.htaccess)** - Apache configuration
+- **[users.json](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/users.json)** - User data storage
+- **[error.log](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/error.log)** - Error log file
+- **[RUN_BOT_WINDOWS.bat](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/RUN_BOT_WINDOWS.bat)** - Setup instructions
+- **[run_local.bat](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/run_local.bat)** - Local server script
 
-### 🎮 Interactive Games (8+ Types)
-1. **Head or Tails** - Coin toss game
-2. **Rock Paper Scissors** - Classic game with emojis
-3. **Tic-Tac-Toe** - Player vs AI with smart bot moves
-4. **Hangman** - Word guessing game
-5. **Dice Roll** - Random dice simulator
-6. **Trivia/Quiz** - Knowledge-based questions
-7. **Daily Challenge** - Special daily mini-game
-8. **Fortune Teller** - Random fortune predictions
+## Prerequisites
 
-### 💡 Dynamic Quotes & Content System
-- **API-Integrated Quotes**: Fetches from multiple online APIs
-- **Daily Motivational/Inspirational Quotes**
-- **Inline "Next Quote" Button** to avoid repetition
-- **Reaction Buttons** for quotes (❤️ 👍 👎)
-- **Admin Custom Quote Uploads**
-- **Quote Categories** for targeted content
-- **Inline Keyword Search** for specific quotes
-- **Share Quotes** to any chat
-- **Random Fun Facts** notifications
+Before running the bot, you need to:
 
-### 🤖 AI & Smart Features
-- **Hugging Face NLP API Integration** for human-like responses
-- **Exa AI Search & Question Answering** for factual information
-- **Intent Detection**: Automatically detects if user wants payment, game, quote, proof, etc.
-- **Personalized Recommendations** based on user activity
-- **Time-of-Day Greetings** for personalized experience
-- **Sentiment Detection** (happy, sad, frustrated)
-- **Adaptive Menu** based on user habits
-- **Auto-Learning** from repeated inputs
+1. **Get a Telegram Bot Token**:
+   - Open Telegram and search for @BotFather
+   - Send `/newbot` command and follow instructions
+   - Copy the HTTP API token you receive
 
-### 👥 Social & Community Features
-- **Interactive Polls** and surveys
-- **Live Leaderboards** with hall of fame
-- **Weekly Top User Notifications**
-- **Daily Streaks** and points system
-- **User vs User Challenges**
-- **Random Trivia/Riddles**
-- **Birthday & Special Day Greetings**
-- **Reward System** for engagement
-- **Top Player/Top Payer Recognition**
+2. **Choose your deployment method**:
+   - **Option A**: Install Docker Desktop (for local testing)
+   - **Option B**: Deploy to Render.com (recommended for production)
+   - **Option C**: Install PHP locally (for development)
 
-### Channel & Group Management
-- **Live Member Counts**
-- **Auto Welcome** for new members
-- **Inline Poll Creation**
-- **Group Rules Reminders**
-- **Anti-Spam Protection** with auto-kick
-- **Important Message Pinning**
-- **Auto-Forward** to proofs channel
-- **Auto-Share** latest proofs
+## Running the Bot
 
-### Media & Creativity Tools
-- **Multi-Format Support**: Images, GIFs, videos, documents
-- **Auto-Moderation** with forward to proofs channel
-- **Inline Media Preview**
-- **OCR Caption Detection**
-- **Auto-Thumbnail Generation**
-- **Image Editing** (crop, text, watermark)
-- **File Validation** (type & size)
-- **Temporary File Auto-Deletion**
-- **Sticker & GIF Creation**
-- **Animated Buttons**
+### Option 1: Using Docker (Recommended)
 
-### Automation & Notifications
-- **Daily Scheduled Messages** and tips
-- **Payment Reminders**
-- **Quote Notifications**
-- **Game Challenge Reminders**
-- **Admin Alerts** for failed/suspicious payments
-- **Anti-Spam Automation**
-- **Auto-Delete** old messages
-- **Automatic DB Backup**
-- **System Uptime Monitoring**
-- **Friendly Error Messages**
+1. Install Docker Desktop:
+   - Download from: https://www.docker.com/products/docker-desktop
+   - Install and start Docker Desktop
 
-### Security & Safety
-- **File Validation** for all uploads
-- **Rate Limiting** for commands
-- **Advanced Anti-Spam Detection**
-- **GDPR-Compliant** minimal data storage
-- **Comprehensive Logging** of all actions
-- **Admin Alerts** for suspicious behavior
-- **Secure Inline Keyboards**
-- **Graceful Fallback** on failures
-- **Invalid Command Filtering**
+2. Configure your bot:
+   - Edit [config.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/config.php):
+     - Replace `YOUR_BOT_TOKEN_HERE` with your actual Telegram bot token
+     - Replace `YOUR_TELEGRAM_ID` with your Telegram user ID (for admin access)
 
-### Fun Easter Eggs
-- **Hidden Commands** for power users
-- **Random Jokes/Memes**
-- **Daily Riddles/Trivia**
-- **Secret Mini-Games**
-- **Random Surprise Rewards**
-- **Personalized Jokes/Compliments**
-- **AI-Generated Fun Responses**
-- **Animated Buttons**
-- **Random Facts**
-- **Mystery Reward System**
-
-## 🏗️ Modular Code Structure
-
-- `config.py` - All configuration settings
-- `database.py` - SQLite database management
-- `utils.py` - Utility functions (QR, OCR, file handling)
-- `games.py` - Game implementations
-- `quotes.py` - Quote fetching and management
-- `ai.py` - AI/NLP integration
-- `exa_ai.py` - Exa AI integration
-- `payments.py` - Payment processing with OCR
-- `admin.py` - Admin dashboard functionality
-- `bot.py` - Main bot implementation
-
-## 🛠 Setup Instructions
-
-1. Install Python 3.7+
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-3. **Windows Only**: Install Tesseract OCR:
-   - Download from: https://github.com/UB-Mannheim/tesseract/wiki
-   - Add to PATH environment variable
-4. Replace `PLACEHOLDER_ADMIN_ID` in `config.py` with your actual Telegram ID
-5. (Optional) Add Hugging Face API key in `config.py` for AI features
-6. Run the bot:
-   ```
-   python bot.py
+3. Run the bot:
+   ```bash
+   docker-compose up
    ```
 
-## 🎮 Commands
+4. Set the webhook:
+   - Visit `http://localhost:8080/setwebhook` in your browser
+   - Or manually set it using:
+     ```
+     https://api.telegram.org/bot[YOUR_BOT_TOKEN]/setWebhook?url=http://localhost:8080
+     ```
 
-### Core Commands
-- `/start` - Main menu with all features
-- `/admin` - Admin dashboard (admin only)
-- `/payments` - Generate payment QR codes and upload screenshots
-- `/qr` - Generate UPI QR code
-- `/proofs` - View latest payment proofs
-- `/channel` - Join our main channel
+### Option 2: Deploy to Render.com (Production)
 
-### Interactive Commands
+1. Push this repository to GitHub
+
+2. Create a new Web Service on Render:
+   - Go to https://dashboard.render.com/
+   - Click "New" → "Web Service"
+   - Connect your GitHub repository
+   - Set the following configuration:
+     - **Name**: Your bot name
+     - **Environment**: Docker
+     - **Plan**: Free
+
+3. Set environment variables in Render:
+   ```
+   TELEGRAM_BOT_TOKEN=your_actual_bot_token_here
+   RENDER_EXTERNAL_URL=https://your-service-name.onrender.com
+   ```
+
+4. Set the webhook:
+   - After deployment, visit: `https://your-service-name.onrender.com/setwebhook`
+   - Or manually set it using:
+     ```
+     https://api.telegram.org/bot[YOUR_BOT_TOKEN]/setWebhook?url=https://your-service-name.onrender.com
+     ```
+
+### Option 3: Local PHP Server (Development)
+
+1. Install PHP 7.4 or higher:
+   - Download from: https://windows.php.net/download/
+   - Add PHP to your system PATH
+
+2. Configure your bot:
+   - Edit [config.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/config.php):
+     - Replace `YOUR_BOT_TOKEN_HERE` with your actual Telegram bot token
+     - Replace `YOUR_TELEGRAM_ID` with your Telegram user ID
+
+3. Run the local server script:
+   ```bash
+   run_local.bat
+   ```
+
+4. Use ngrok for webhook (since localhost isn't accessible from Telegram):
+   - Download ngrok from: https://ngrok.com/
+   - Run: `ngrok http 8080`
+   - Copy the HTTPS URL and set webhook:
+     ```
+     https://api.telegram.org/bot[YOUR_BOT_TOKEN]/setWebhook?url=https://your-ngrok-url.ngrok.io
+     ```
+
+## Bot Commands
+
+- `/start` - Start the bot and get welcome message
+- `/help` - Show help information
+- `/info` - Get user information
 - `/games` - Play mini games
-- `/quote` - Get motivational quote
-- `/search <query>` - Search web content with Exa AI
-- `/ask <question>` - Ask questions with Exa AI
-- `/stats` - View your statistics
-- `/vip_features` - VIP exclusive features (VIP users only)
-- `/help` - Show all commands
+- `/settings` - Access bot settings
+- `/admin` - Admin dashboard (admin only)
 
-## 🔧 Configuration
+## Games
 
-The bot uses the token `7835457395:AAHOVKzTw2PXo1GR_fy1-szjQdmBhhSWF7I` and is ready to run immediately after installing dependencies.
+- Rock Paper Scissors 🪨📄✂️
+- Dice Roll 🎲
+- Coin Toss 🪙
+- Number Guessing (partially implemented)
 
-## 📁 File Structure
-- `bot.py` - Main bot implementation
-- `config.py` - Configuration settings
-- `database.py` - Database management
-- `utils.py` - Utility functions
-- `games.py` - Game implementations
-- `quotes.py` - Quote management
-- `ai.py` - AI integration
-- `exa_ai.py` - Exa AI integration
-- `payments.py` - Payment processing
-- `admin.py` - Admin dashboard
-- `requirements.txt` - Dependencies list
-- `README.md` - This documentation
-- `temp/` - Temporary files (auto-cleaned)
-- `proofs/` - Proof images storage
+## Admin Features
 
-## 🏆 Sigma Features
+- User statistics
+- User management
+- Broadcast messages
+- Health monitoring
 
-This bot goes beyond basic functionality with:
-- **100+ Extreme Features** as requested
-- Nested menu systems with intuitive navigation
-- Personalized user experiences with AI
-- Interactive mini-games with leaderboards
-- Smart search and intent detection
-- AI-powered responses with sentiment analysis
-- Comprehensive analytics and statistics
-- Hidden easter eggs and surprise features
-- Professional UI/UX design with emojis
-- Modular, maintainable code structure
-- Database-driven persistent storage
-- OCR-powered payment verification
-- Admin approval workflows
-- Community building tools
-- Automation and scheduling
-- Security and safety measures
-- Full admin dashboard with broadcast system
-- Exa AI search and question answering
-- VIP user privileges and exclusive features
+## Health Check
 
-All original functionality is preserved while adding these premium features.# tanish-choudhary-bot
+Visit `http://localhost:8080/healthz` (local) or `https://your-service-name.onrender.com/healthz` (Render) to check if the bot is running.
+
+## File Permissions
+
+The Dockerfile sets proper permissions for:
+- Web server can read all application files
+- Directories for logs and data storage are writable
+- User data file ([users.json](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/users.json)) has appropriate permissions
+
+## Data Persistence
+
+- User data is stored in [users.json](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/users.json)
+- Logs are written to [logs/](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/logs/) directory
+- All data persists between container restarts
+
+## Customization
+
+You can extend this bot by:
+1. Adding new commands in [index.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/index.php)
+2. Creating new modules for additional functionality
+3. Modifying the games in [games.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/games.php)
+4. Adding more admin features in [admin.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/admin.php)
+
+## Troubleshooting
+
+1. **Webhook not working**:
+   - Check that your bot token is correct
+   - Ensure the URL is accessible from the internet (use ngrok for localhost)
+   - Verify the webhook URL with:
+     ```
+     https://api.telegram.org/bot[YOUR_BOT_TOKEN]/getWebhookInfo
+     ```
+
+2. **Permission errors**:
+   - Check file permissions in the Dockerfile
+   - Ensure the web server can write to logs and data directories
+
+3. **Bot not responding**:
+   - Check the logs in [logs/](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/logs/) directory
+   - Verify the bot token is correct
+   - Make sure the webhook is properly set
+
+4. **Docker issues**:
+   - Ensure Docker Desktop is running
+   - Check Docker logs with `docker-compose logs`
+   - Restart Docker Desktop if needed
+
+## Support
+
+For issues with this bot, please check:
+1. The logs in the [logs/](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/logs/) directory
+2. The error messages in [error.log](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/error.log)
+3. Ensure all configuration values are correctly set in [config.php](file:///c%3A/Users/Admin/OneDrive/Desktop/telegram%20bot/config.php)

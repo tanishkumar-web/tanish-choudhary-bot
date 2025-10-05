@@ -1,0 +1,8 @@
+{
+  "users": [],
+  "metadata": {
+    "created_at": "2025-10-05T00:00:00Z",
+    "version": "1.0",
+    "description": "User data storage for PHP Telegram Bot"
+  }
+}

@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  telegram-bot:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - RENDER_EXTERNAL_URL=${RENDER_EXTERNAL_URL}
+    volumes:
+      - ./logs:/var/www/html/logs
+      - ./data:/var/www/html/data
+      - ./users.json:/var/www/html/users.json
+    restart: unless-stopped
+
+  # Python-based bot service (your actual bot)
+  python-bot:
+    build: 
+      context: .
+      dockerfile: Dockerfile.python
+    ports:
+      - "8081:8080"
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - ADMIN_IDS=${ADMIN_IDS}
+      - UPI_ID=${UPI_ID}
+    volumes:
+      - ./bot_data.db:/app/bot_data.db
+      - ./temp:/app/temp
+      - ./proofs:/app/proofs
+    restart: unless-stopped

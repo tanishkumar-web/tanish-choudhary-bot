@@ -1,0 +1,49 @@
+# .htaccess - Apache configuration for PHP Telegram Bot
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Handle Telegram webhook requests
+RewriteCond %{REQUEST_METHOD} POST
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Handle health check endpoint
+RewriteCond %{REQUEST_URI} ^/healthz$
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+
+# PHP settings
+php_flag display_errors off
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# Cache control for static files
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+</FilesMatch>
+
+# Deny access to sensitive files
+<Files ~ "^\.(htaccess|htpasswd|ini|log|sh|inc|bak)$">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Deny access to log files
+<Files ~ "\.(log)$">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Deny access to data files
+<Files "users.json">
+    Order Allow,Deny
+    Deny from all
+</Files>

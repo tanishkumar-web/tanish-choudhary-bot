@@ -1,0 +1,45 @@
+# Ignore git directory
+.git/
+
+# Ignore cache directories
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Ignore log files
+*.log
+
+# Ignore environment files
+.env
+.venv/
+venv/
+
+# Ignore temporary directories
+temp/
+proofs/
+
+# Ignore backup files
+*.backup
+*.bak
+*~
+
+# Ignore OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore documentation files
+*.md
+CHANGELOG.md
+FEATURES_SUMMARY.md
+FINAL_SETUP_INSTRUCTIONS.txt
+README.md
+SUMMARY.md
+final_summary.md
