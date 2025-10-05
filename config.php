@@ -2,8 +2,8 @@
 // config.php - Configuration file for PHP Telegram Bot
 
 // Bot Configuration - Using environment variables with fallbacks
-define('BOT_TOKEN', getenv('TELEGRAM_BOT_TOKEN') ?: 'YOUR_BOT_TOKEN_HERE'); // Set via environment variable
-define('ADMIN_IDS', [getenv('ADMIN_TELEGRAM_ID') ?: 'YOUR_TELEGRAM_ID']); // Set via environment variable
+define('BOT_TOKEN', getenv('TELEGRAM_BOT_TOKEN') ?: '7762063253:AAEqP6LHGCuRx0ToS84ne_gLqpwoXX_J03k'); // Your bot token
+define('ADMIN_IDS', [getenv('ADMIN_TELEGRAM_ID') ?: '6080146784']); // Your Telegram user ID
 
 // Database
 define('USERS_FILE', 'users.json');
