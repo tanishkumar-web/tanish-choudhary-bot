@@ -61,7 +61,7 @@ function handleWebRequests() {
     <!DOCTYPE html>
     <html>
     <head>
-        <title>PHP Telegram Bot</title>
+        <title>DARK's PHP Telegram Bot</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -73,15 +73,16 @@ function handleWebRequests() {
             .endpoint { background-color: #f8f9fa; padding: 15px; margin: 10px 0; border-left: 4px solid #007bff; }
             .button { background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block; margin: 5px 0; }
             .button:hover { background-color: #0056b3; }
+            .dark-theme { background-color: #2c3e50; color: white; }
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>PHP Telegram Bot Server</h1>
+            <h1>🌟 DARK's PHP Telegram Bot 🌟</h1>
             <div class="status running">Status: Running</div>
             
             <h2>Bot Information</h2>
-            <p>This server hosts a PHP-based Telegram bot.</p>
+            <p>This server hosts DARK's premium PHP Telegram bot.</p>
             
             <h2>Endpoints</h2>
             <div class="endpoint">
@@ -106,8 +107,8 @@ function handleWebRequests() {
                 <li><strong>/start</strong> - Start the bot and get welcome message</li>
                 <li><strong>/help</strong> - Show help information</li>
                 <li><strong>/info</strong> - Get user information</li>
+                <li><strong>/games</strong> - Play mini games</li>
                 <li><strong>/settings</strong> - Access bot settings</li>
-                <li><strong>/games</strong> - Play games</li>
                 <li><strong>/admin</strong> - Admin dashboard (admin only)</li>
             </ul>
             
@@ -217,14 +218,15 @@ function handleCallbackQuery($callbackQuery) {
 
 function sendWelcomeMessage($chatId, $firstName, $bot) {
     $text = "✨ Welcome, $firstName!\n\n"
-          . "🔐 Your PHP Telegram bot is now active!\n\n"
+          . "🌟 You're using DARK's Premium PHP Telegram Bot!\n\n"
+          . "🔐 Your gateway to premium features\n\n"
           . "Available Commands:\n"
           . "🆘 /help - Show help information\n"
           . "ℹ️ /info - Get your user information\n"
           . "🎮 /games - Play mini games\n"
           . "⚙️ /settings - Access bot settings\n"
           . "👑 /admin - Admin dashboard (admins only)\n\n"
-          . "Enjoy using this PHP-based Telegram bot!";
+          . "Enjoy using this premium PHP-based Telegram bot!";
     
     $keyboard = [
         'inline_keyboard' => [
@@ -242,8 +244,8 @@ function sendWelcomeMessage($chatId, $firstName, $bot) {
 }
 
 function sendHelpMessage($chatId, $bot) {
-    $text = "🤖 <b>PHP Telegram Bot Help</b>\n\n"
-          . "This bot demonstrates a complete PHP implementation for Telegram.\n\n"
+    $text = "🤖 <b>DARK's PHP Telegram Bot Help</b>\n\n"
+          . "This premium bot demonstrates a complete PHP implementation for Telegram.\n\n"
           . "<b>Commands:</b>\n"
           . "/start - Start the bot\n"
           . "/help - Show this help message\n"
